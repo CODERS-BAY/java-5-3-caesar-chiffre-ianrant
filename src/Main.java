@@ -22,8 +22,6 @@ public class Main {
 
         char[] characterArray = textInput.toCharArray();
 
-        int decValueRange = 0; // variable that checks the range of the decimal value of a character
-
         for (int i =0; i <characterArray.length; i++){
             int temp = characterArray[i];
 
