@@ -32,11 +32,9 @@ public class Main {
 
             // if value of temp exceeds the unicode range of capital letters or small letters, it the counter
             // goes back to A or a and cunts up (proportionately from there)
-            if ((temp > 90 && temp < 96) ^ (temp < 97 && temp > 122)) {
-                temp -= 26;
-            } /*else if (){
-                temp -= 26;
-            }*/
+            if (temp > 'z' ^ temp > 'Z') {
+                temp = temp - 26;
+            }
 
             System.out.print(" corrected temp = " + temp + " ");
             System.out.println();
