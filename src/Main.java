@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +21,7 @@ public class Main {
         String textInput = stringScanner.nextLine();
         char[] characterArray = textInput.toCharArray();
 
-        for (int i =0; i <characterArray.length; i++){
+        for (int i = 0; i <characterArray.length; i++){
             int temp = characterArray[i];
 
             System.out.print(characterArray[i] + ": ");
@@ -32,18 +33,25 @@ public class Main {
 
             // if value of temp exceeds the unicode range of capital letters or small letters, it the counter
             // goes back to A or a and cunts up (proportionately from there)
-            if (temp > 'z' ^ temp > 'Z') {
-                temp = temp - 26;
+            if (temp >= 'a' && temp <= 'z') {
+                temp += offset;
+                if (temp > 'z') {
+                    temp -= 26;
+                }
+            } else if (temp >= 'A' && temp <= 'Z') {
+                temp += offset;
+                if (temp > 'Z') {
+                    temp -= 26;
+                }
             }
 
             System.out.print(" corrected temp = " + temp + " ");
             System.out.println();
 
-
-
-            /*
-            characterArray[i] = (char)temp;
+            /*characterArray[i] = (char)temp;
             System.out.print(characterArray[i]);*/
         }
+        System.out.println();
+        Arrays.toString(characterArray);
     }
 }
